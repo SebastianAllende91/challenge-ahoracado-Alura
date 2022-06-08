@@ -228,6 +228,14 @@ function isWinner() {
   return palabraCorrecta.length === b.length;
 }
 
+if (window.screen.width < 500) {
+  console.log(window.screen.width);
+  console.log("Movile");
+} else {
+  console.log(window.screen.width);
+  console.log("Desktop");
+}
+
 document.onkeydown = (e) => {
   let letra = e.key.toUpperCase();
 
