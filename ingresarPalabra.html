@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Agregar Palabra - Challenge Ahorcado</title>
+  </head>
+  <body>
+    <header>
+      <img src="assets/Vector.png" alt="logo" />
+    </header>
+    <div class="container enter-word">
+      <input
+        type="text"
+        class="new-word"
+        name="new-word"
+        id="new-word"
+        placeholder="Ingrese una palabra..."
+      />
+
+      <p class="warning">
+        <img
+          class="img-warning"
+          src="assets/signo-de-exclamacion.png"
+          alt="icono"
+        />Max. de 8 letras
+      </p>
+      <div class="wrap-buttons">
+        <a class="link btn tertiary" id="add-word">Guardar y empezar</a>
+        <a href="index.html" class="link btn quatern">Cancelar</a>
+      </div>
+    </div>
+    <footer>
+      <a href="https://github.com/sebastianallende91" target="_blank"> <img src="assets/github_icon_32.png" alt="github"></a>
+       <p>Creado por Sebastian <&#169>Copyright</p>
+     </footer>
+    <script src="js/agregarPalabra.js"></script>
+    <!-- <script src="js/juego.js"></script> -->
+    <script src="js/localStorage.js"></script>
+  </body>
+</html>
