@@ -224,20 +224,14 @@ function isWinner() {
   return palabraCorrecta.length === b.length;
 }
 
-// if () {
-//   function onKeyDownHandler() {
-//     console.log("key pressed ",);
-//   }
-// }
-
 document.onkeydown = (e) => {
   let letra;
   if (window.screen.width < 500) {
-    letra = String.fromCharCode(event.keyCode);
+    letra = String.fromCharCode(e.keyCode);
+    console.log(letra);
   } else {
     letra = e.key.toUpperCase();
   }
-  console.log(letra);
   // let letra = e.key.toUpperCase();
 
   if (/[^a-z]/.test(e.key)) {
