@@ -102,9 +102,7 @@ function dibujarPiernaDer() {
 
 function elegirPalabraSecreta() {
   var palabra = palabras[Math.floor(Math.random() * palabras.length)];
-
   palabraSecreta = palabra;
-
   // console.log(palabra);
   return palabraSecreta;
 }
@@ -115,7 +113,6 @@ function dibujarLineas() {
   tablero.lineJoin = "round";
   tablero.strokeStyle = "#0A3871";
   tablero.beginPath();
-
   //damos el ancho a la palabra dentro del canvas
   let ancho = 600 / palabraSecreta.length;
 
@@ -123,7 +120,6 @@ function dibujarLineas() {
     tablero.moveTo(500 + ancho * i, 640);
     tablero.lineTo(550 + ancho * i, 640);
   }
-
   tablero.stroke();
   tablero.closePath();
 }
@@ -210,8 +206,8 @@ function adicionarLetraIncorrecta(letter) {
       setTimeout(() => {}, 1800);
       Swal.fire({
         icon: "error",
-        title: "Finalizado...",
-        text: "Haz perdido la partida!",
+        title: "Haz perdido...",
+        text: `La palabra era: ${palabraSecreta}`,
       });
       setTimeout(() => {
         window.open("../juego.html", "_self");
@@ -228,16 +224,21 @@ function isWinner() {
   return palabraCorrecta.length === b.length;
 }
 
-if (window.screen.width < 500) {
-  console.log(window.screen.width);
-  console.log("Movile");
-} else {
-  console.log(window.screen.width);
-  console.log("Desktop");
-}
+// if () {
+//   function onKeyDownHandler() {
+//     console.log("key pressed ",);
+//   }
+// }
 
 document.onkeydown = (e) => {
-  let letra = e.key.toUpperCase();
+  let letra;
+  if (window.screen.width < 500) {
+    letra = String.fromCharCode(event.keyCode);
+  } else {
+    letra = e.key.toUpperCase();
+  }
+  console.log(letra);
+  // let letra = e.key.toUpperCase();
 
   if (/[^a-z]/.test(e.key)) {
     Swal.fire({
